@@ -54,25 +54,26 @@ func tweetFieldStringArray(arr []TweetField) []string {
 
 // TweetObj is the primary object on the tweets endpoints
 type TweetObj struct {
-	ID                 string                       `json:"id"`
-	Text               string                       `json:"text"`
-	Attachments        *TweetAttachmentsObj         `json:"attachments,omitempty"`
-	AuthorID           string                       `json:"author_id,omitempty"`
-	ContextAnnotations []*TweetContextAnnotationObj `json:"context_annotations,omitempty"`
-	ConversationID     string                       `json:"conversation_id,omitempty"`
-	CreatedAt          string                       `json:"created_at,omitempty"`
-	Entities           *EntitiesObj                 `json:"entities,omitempty"`
-	Geo                *TweetGeoObj                 `json:"geo,omitempty"`
-	InReplyToUserID    string                       `json:"in_reply_to_user_id,omitempty"`
-	Language           string                       `json:"lang,omitempty"`
-	NonPublicMetrics   *TweetMetricsObj             `json:"non_public_metrics,omitempty"`
-	OrganicMetrics     *TweetMetricsObj             `json:"organic_metrics,omitempty"`
-	PossiblySensitive  bool                         `json:"possibly_sensitive,omitempty"`
-	PromotedMetrics    *TweetMetricsObj             `json:"promoted_metrics,omitempty"`
-	PublicMetrics      *TweetMetricsObj             `json:"public_metrics,omitempty"`
-	ReferencedTweets   []*TweetReferencedTweetObj   `json:"referenced_tweets,omitempty"`
-	Source             string                       `json:"source,omitempty"`
-	WithHeld           *WithHeldObj                 `json:"withheld,omitempty"`
+	ID                  string                       `json:"id"`
+	Text                string                       `json:"text"`
+	Attachments         *TweetAttachmentsObj         `json:"attachments,omitempty"`
+	AuthorID            string                       `json:"author_id,omitempty"`
+	ContextAnnotations  []*TweetContextAnnotationObj `json:"context_annotations,omitempty"`
+	ConversationID      string                       `json:"conversation_id,omitempty"`
+	CreatedAt           string                       `json:"created_at,omitempty"`
+	Entities            *EntitiesObj                 `json:"entities,omitempty"`
+	Geo                 *TweetGeoObj                 `json:"geo,omitempty"`
+	InReplyToUserID     string                       `json:"in_reply_to_user_id,omitempty"`
+	Language            string                       `json:"lang,omitempty"`
+	NonPublicMetrics    *TweetMetricsObj             `json:"non_public_metrics,omitempty"`
+	OrganicMetrics      *TweetMetricsObj             `json:"organic_metrics,omitempty"`
+	PossiblySensitive   bool                         `json:"possibly_sensitive,omitempty"`
+	PromotedMetrics     *TweetMetricsObj             `json:"promoted_metrics,omitempty"`
+	PublicMetrics       *TweetMetricsObj             `json:"public_metrics,omitempty"`
+	ReferencedTweets    []*TweetReferencedTweetObj   `json:"referenced_tweets,omitempty"`
+	Source              string                       `json:"source,omitempty"`
+	WithHeld            *WithHeldObj                 `json:"withheld,omitempty"`
+	EditHistoryTweetIDs EditHistoryTweetIDs          `json:"edit_history_tweet_ids"`
 }
 
 // TweetAttachmentsObj specifics the type of attachment present in the tweet
@@ -122,3 +123,6 @@ type TweetReferencedTweetObj struct {
 	Type string `json:"type"`
 	ID   string `json:"id"`
 }
+
+// EditHistoryTweetIDs is an array of tweet edit ids
+type EditHistoryTweetIDs []string
